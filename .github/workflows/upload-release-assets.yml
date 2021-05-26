@@ -19,7 +19,7 @@ jobs:
       run: |
         TAG=${GITHUB_REF/refs\/tags\//}
         VERSION=${GITHUB_REF/refs\/tags\/v/}
-        gh release upload ${TAG} target/${{ env.artifact_name }}-${{ VERSION }}.txt
-        gh release upload ${TAG} target/${{ env.artifact_name }}-${{ VERSION }}-other.txt
-        gh release upload ${TAG} target/${{ env.artifact_name }}-${{ VERSION }}-evenmore.txt
+        gh release upload ${TAG} target/${{ env.artifact_name }}-${VERSION}.txt
+        gh release upload ${TAG} target/${{ env.artifact_name }}-${VERSION}-other.txt
+        gh release upload ${TAG} target/${{ env.artifact_name }}-${VERSION}-evenmore.txt
         
