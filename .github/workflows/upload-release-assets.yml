@@ -22,4 +22,5 @@ jobs:
         gh release upload ${TAG} target/${{ env.artifact_name }}-${VERSION}.txt
         gh release upload ${TAG} target/${{ env.artifact_name }}-${VERSION}-other.txt
         gh release upload ${TAG} target/${{ env.artifact_name }}-${VERSION}-evenmore.txt
-        
+      env:
+       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
