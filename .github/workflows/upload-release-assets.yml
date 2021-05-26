@@ -1,0 +1,25 @@
+name: Upload release assets with GitHub CLI
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+    
+    env:
+      artifact_name: testing
+      
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Upload release assets
+      run: |
+        TAG=${GITHUB_REF/refs\/tags\//}
+        VERSION=${GITHUB_REF/refs\/tags\/v/}
+        gh release upload ${TAG} target/${{ env.artifact_name }}-${{ VERSION }}.txt
+        gh release upload ${TAG} target/${{ env.artifact_name }}-${{ VERSION }}-other.txt
+        gh release upload ${TAG} target/${{ env.artifact_name }}-${{ VERSION }}-evenmore.txt
+        
