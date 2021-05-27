@@ -20,7 +20,7 @@ jobs:
         node-version: '14'
         
     - run: |
-        npm install svg2png 
+        npm install svg2png -g
         svg2png ${{ github.event.inputs.ORIGINAL }}
     
     - name: Commit and push 
