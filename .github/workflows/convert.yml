@@ -5,7 +5,13 @@ on:
     inputs:
       ORIGINAL:
         description: 'File to convert'
-        required: true	
+        required: true
+      WIDTH:
+        description: 'target width'
+        required: true
+      HEIGHT:
+        description: 'target height'
+        required: true
 
 jobs:
   convert:
@@ -19,9 +25,10 @@ jobs:
       with:
         node-version: '14'
         
-    - run: |
+    - name: Convert
+      run: |
         npm install svg2png -g
-        svg2png ${{ github.event.inputs.ORIGINAL }}
+        svg2png ${{ github.event.inputs.ORIGINAL }} --width=${{ github.event.inputs.WIDTH }} --height=${{ github.event.inputs.HEIGHT }}
     
     - name: Commit and push 
       uses: EndBug/add-and-commit@v7
