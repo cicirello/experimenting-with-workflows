@@ -12,6 +12,9 @@ on:
       HEIGHT:
         description: 'target height'
         required: true
+      OUTPUT:
+        description: 'output filename'
+        required: true
 
 jobs:
   convert:
@@ -28,7 +31,7 @@ jobs:
     - name: Convert
       run: |
         npm install svg2png -g
-        svg2png ${{ github.event.inputs.ORIGINAL }} --width=${{ github.event.inputs.WIDTH }} --height=${{ github.event.inputs.HEIGHT }}
+        svg2png ${{ github.event.inputs.ORIGINAL }} --output=${{ github.event.inputs.OUTPUT }} --width=${{ github.event.inputs.WIDTH }} --height=${{ github.event.inputs.HEIGHT }}
     
     - name: Commit and push 
       uses: EndBug/add-and-commit@v7
