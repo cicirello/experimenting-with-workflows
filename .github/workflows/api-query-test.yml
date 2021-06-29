@@ -11,9 +11,9 @@ jobs:
     steps:
     - name: gh query api
       run: |
-        gh api graphql -f query='
-          query {
-            viewer {
+        gh api graphql -F owner='{owner}' -f query='
+          query($owner: String!) {
+            user(login: $owner) {
               contributionsCollection {
                 totalCommitContributions 
                 totalIssueContributions 
