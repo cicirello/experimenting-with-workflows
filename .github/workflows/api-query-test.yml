@@ -27,7 +27,10 @@ jobs:
               }
               issues {
                 totalCount
-              }              
+              }
+              pullRequests {
+                totalCount
+              }
               repositories {
                 totalCount
               }              
