@@ -25,6 +25,9 @@ jobs:
               followers {
                 totalCount
               }
+              issues {
+                totalCount
+              }              
               repositories {
                 totalCount
               }              
