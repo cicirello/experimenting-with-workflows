@@ -19,17 +19,17 @@ jobs:
                 totalIssueContributions 
                 totalPullRequestContributions 
                 totalRepositoryContributions 
-             }
-             followers {
-               totalCount
-             }
-             gists {
-               totalCount
-             }
-             repositoriesContributedTo {
-               totalCount
-             }
+              }
+              followers {
+                totalCount
+              }
+              gists {
+                totalCount
+              }
+              repositoriesContributedTo {
+                totalCount
+              }
+            }
           }
-        }
-      '
+        '
 
