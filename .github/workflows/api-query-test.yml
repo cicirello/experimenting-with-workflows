@@ -25,6 +25,9 @@ jobs:
               followers {
                 totalCount
               }
+              repositories {
+                totalCount
+              }              
               repositoriesContributedTo {
                 totalCount
               }
