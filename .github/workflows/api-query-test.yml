@@ -12,7 +12,7 @@ jobs:
     - name: gh query api
       run: |
         gh api graphql -f query='
-          query() {
+          query {
             viewer {
               contributionsCollection {
                 totalCommitContributions 
