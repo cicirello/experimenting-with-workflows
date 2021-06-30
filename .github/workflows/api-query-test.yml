@@ -33,7 +33,7 @@ jobs:
               pullRequests {
                 totalCount
               }
-              repositories {
+              repositories(first: 100, ownerAffiliations: OWNER) {
                 totalCount
                 nodes {
                   stargazers {
