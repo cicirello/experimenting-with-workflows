@@ -13,8 +13,8 @@ jobs:
 
     - name: gh query api
       run: |
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
+        gh api graphql -F owner='{owner}' --paginate -f query='
+          query($owner: String!, $endCursor: String) {
             user(login: $owner) {
               contributionsCollection {
                 totalCommitContributions 
@@ -33,7 +33,7 @@ jobs:
               pullRequests {
                 totalCount
               }
-              repositories(first: 100, ownerAffiliations: OWNER) {
+              repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER) {
                 totalCount
                 nodes {
                   stargazerCount 
@@ -41,6 +41,10 @@ jobs:
                   watchers {
                     totalCount
                   }
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
                 }
               }              
               repositoriesContributedTo {
