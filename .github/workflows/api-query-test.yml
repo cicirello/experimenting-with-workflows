@@ -16,7 +16,7 @@ jobs:
         gh api graphql -F owner='{owner}' --paginate -f query='
           query($owner: String!, $endCursor: String) {
             user(login: $owner) {
-              contributionsCollection(from: '1970-01-01T00:00:01') {
+              contributionsCollection(from: "1970-01-01T00:00:01.000Z") {
                 totalCommitContributions 
                 totalIssueContributions 
                 totalPullRequestContributions 
