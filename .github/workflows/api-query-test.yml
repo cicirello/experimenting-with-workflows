@@ -58,9 +58,9 @@ jobs:
 
     - name: gh query api
       run: |
-        curl \
-          -H "Accept: application/vnd.github.cloak-preview+json" \
-          -G https://api.github.com/search/commits?q=author:cicirello+total_count
-      #gh api search/commits -H "Accept: application/vnd.github.cloak-preview+json" -f q='author:cicirello'
-      #env:
-      #GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        #curl \
+        #  -H "Accept: application/vnd.github.cloak-preview+json" \
+        #  -G https://api.github.com/search/commits?q=author:cicirello+total_count
+        gh api search/commits -H "Accept: application/vnd.github.cloak-preview+json" -f q=author:cicirello+total_count
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
