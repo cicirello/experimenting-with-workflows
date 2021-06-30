@@ -33,7 +33,7 @@ jobs:
               pullRequests {
                 totalCount
               }
-              repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER) {
+              repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER, isFork: false) {
                 totalCount
                 nodes {
                   stargazerCount 
