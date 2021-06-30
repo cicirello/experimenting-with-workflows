@@ -58,6 +58,6 @@ jobs:
 
     - name: gh query api
       run: |
-        gh api search/commits --preview cloak -F owner='{owner}' -H "Accept: application/vnd.github.cloak-preview+json" -f q='author:$owner'
+        gh api search/commits --preview cloak -H "Accept: application/vnd.github.cloak-preview+json" -f q='author:{owner} total_count'
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
