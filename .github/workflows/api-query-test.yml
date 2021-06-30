@@ -36,7 +36,9 @@ jobs:
               repositories(first: 100, ownerAffiliations: OWNER) {
                 totalCount
                 nodes {
-                  stargazers {
+                  stargazerCount 
+                  forkCount
+                  watchers {
                     totalCount
                   }
                 }
