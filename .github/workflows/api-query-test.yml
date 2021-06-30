@@ -13,7 +13,7 @@ jobs:
 
     - name: gh query api
       run: |
-        gh api -F owner='{owner}' -X GET search/commits -H "Accept: application/vnd.github.cloak-preview+json" -f q='author:$owner total_count'
+        gh api --preview cloak -F owner='{owner}' -X GET search/commits -H "Accept: application/vnd.github.cloak-preview+json" -f q='author:$owner total_count'
         gh api graphql -F owner='{owner}' --paginate -f query='
           query($owner: String!, $endCursor: String) {
             user(login: $owner) {
