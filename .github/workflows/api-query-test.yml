@@ -35,6 +35,11 @@ jobs:
               }
               repositories {
                 totalCount
+                nodes {
+                  stargazers {
+                    totalCount
+                  }
+                }
               }              
               repositoriesContributedTo {
                 totalCount
