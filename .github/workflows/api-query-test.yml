@@ -58,6 +58,6 @@ jobs:
 
     - name: gh query api
       run: |
-        gh api search/commits --preview cloak -H "Accept: application/vnd.github.cloak-preview" -f q='author:cicirello total_count'
+        gh api search/commits -H "Accept: application/vnd.github.cloak-preview" -f q='author:cicirello total_count'
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
