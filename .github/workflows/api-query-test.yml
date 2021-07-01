@@ -13,7 +13,7 @@ jobs:
 
     - name: gh api query various user stats
       run: |
-        gh api graphql -F owner='{owner}' --paginate -f query='
+        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
           query($owner: String!, $endCursor: String) {
             user(login: $owner) {
               contributionsCollection {
