@@ -33,6 +33,9 @@ jobs:
               pullRequests {
                 totalCount
               }
+              commitComments {
+               totalCount
+              }
               repositoriesContributedTo {
                 totalCount
               }
