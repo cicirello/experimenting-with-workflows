@@ -68,40 +68,9 @@ jobs:
         gh api graphql -F owner='{owner}' -f query='
           query($owner: String!) {
             user(login: $owner) {
-              contributionsCollection(from: "2009-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                totalRepositoryContributions
-                restrictedContributionsCount 
-              }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2010-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                totalRepositoryContributions
-                restrictedContributionsCount 
-              }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
               contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -112,10 +81,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2012-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -126,10 +92,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2013-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -140,10 +103,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2014-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -154,10 +114,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2015-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -168,10 +125,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2016-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -182,10 +136,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2017-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -196,10 +147,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2018-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -210,10 +158,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2019-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -224,10 +169,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2020-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
@@ -238,10 +180,7 @@ jobs:
             user(login: $owner) {
               contributionsCollection(from: "2021-01-01T00:00:00.001Z") {
                 totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
                 totalPullRequestReviewContributions
-                totalRepositoryContributions
                 restrictedContributionsCount 
               }
             }
