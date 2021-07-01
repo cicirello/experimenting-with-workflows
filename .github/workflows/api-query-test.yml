@@ -33,8 +33,15 @@ jobs:
               pullRequests {
                 totalCount
               }
-              repositoriesContributedTo {
+              repositoriesContributedTo(first: 100, after: $endCursor) {
                 totalCount
+                nodes {
+                  name
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
               }
               watching(ownerAffiliations: OWNER) {
                 totalCount
