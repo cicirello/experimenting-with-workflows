@@ -68,7 +68,7 @@ jobs:
 
     - name: gh api query contributions for various years
       run: |
-        gh api graphql -F owner='{owner}' -f query='
+        gh api graphql -F owner='{owner}' --cache 1h -f query='
           query($owner: String!) {
             user(login: $owner) {
               year2011: contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
