@@ -34,9 +34,6 @@ jobs:
               pullRequests {
                 totalCount
               }
-              topRepositories {
-                totalCount
-              }
               repositoriesContributedTo {
                 totalCount
               }
@@ -71,117 +68,57 @@ jobs:
         gh api graphql -F owner='{owner}' -f query='
           query($owner: String!) {
             user(login: $owner) {
-              contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
+              year2011: contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2012-01-01T00:00:00.001Z") {
+              year2012: contributionsCollection(from: "2012-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2013-01-01T00:00:00.001Z") {
+              year2013: contributionsCollection(from: "2013-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2014-01-01T00:00:00.001Z") {
+              year2014: contributionsCollection(from: "2014-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2015-01-01T00:00:00.001Z") {
+              year2015: contributionsCollection(from: "2015-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2016-01-01T00:00:00.001Z") {
+              year2016: contributionsCollection(from: "2016-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2017-01-01T00:00:00.001Z") {
+              year2017: contributionsCollection(from: "2017-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2018-01-01T00:00:00.001Z") {
+              year2018: contributionsCollection(from: "2018-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2019-01-01T00:00:00.001Z") {
+              year2019: contributionsCollection(from: "2019-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2020-01-01T00:00:00.001Z") {
+              year2020: contributionsCollection(from: "2020-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
               }
-            }
-          }
-        '
-        gh api graphql -F owner='{owner}' -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection(from: "2021-01-01T00:00:00.001Z") {
+              year2021: contributionsCollection(from: "2021-01-01T00:00:00.001Z") {
                 totalCommitContributions 
                 totalPullRequestReviewContributions
                 restrictedContributionsCount 
