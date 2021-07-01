@@ -13,9 +13,9 @@ jobs:
 
     - name: gh query api
       run: |
-        gh api graphql --paginate -f query='
-          query($endCursor: String) {
-            viewer {
+        gh api graphql -F owner='{owner}' --paginate -f query='
+          query($owner: String!, $endCursor: String) {
+            user(login: $owner) {
               contributionsCollection {
                 totalCommitContributions 
                 totalIssueContributions 
