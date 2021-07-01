@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: gh query api
+    - name: gh api query various user stats
       run: |
         gh api graphql -F owner='{owner}' --paginate -f query='
           query($owner: String!, $endCursor: String) {
@@ -32,9 +32,6 @@ jobs:
               }
               pullRequests {
                 totalCount
-              }
-              commitComments {
-               totalCount
               }
               repositoriesContributedTo {
                 totalCount
@@ -64,6 +61,120 @@ jobs:
         '
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: gh api query contributions for various years
+      run: |
+        gh api graphql -F owner='{owner}' -f query='
+          query($owner: String!) {
+            user(login: $owner) {
+              contributionsCollection(from: "2009-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2010-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2012-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2013-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2014-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2015-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2016-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2017-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2018-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2019-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2020-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+              contributionsCollection(from: "2021-01-01T00:00:00.001Z") {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount 
+              }
+            }
+      env:
+       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 
     #- name: gh query api
       #run: |
