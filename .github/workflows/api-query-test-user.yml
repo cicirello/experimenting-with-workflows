@@ -18,7 +18,7 @@ jobs:
     - name: gh api query various user stats
       run: |
         gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
-          query($user: String!, $endCursor: String) {
+          query($user: String!) {
             user(login: $user) {
               contributionsCollection {
                 totalCommitContributions 
