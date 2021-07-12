@@ -1,0 +1,64 @@
+name: Query User Specify User
+
+on:
+  workflow_dispatch:
+    inputs:
+      USER:
+        description: 'The user to query'
+        required: true
+
+jobs:
+  query:
+
+    runs-on: ubuntu-latest
+      
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: gh api query various user stats
+      run: |
+        gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
+          query($user: String!, $endCursor: String) {
+            user(login: $user) {
+              contributionsCollection {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                restrictedContributionsCount
+                contributionYears
+              }
+              followers {
+                totalCount
+              }
+              following {
+                totalCount
+              }
+              issues {
+                totalCount
+              }
+              login
+              name
+              pullRequests {
+                totalCount
+              }
+              repositoriesContributedTo {
+                totalCount
+              }
+              sponsorshipsAsMaintainer {
+                totalCount
+              }
+              sponsorshipsAsSponsor  {
+                totalCount
+              }
+              topRepositories(orderBy: {direction: DESC, field: UPDATED_AT}) {
+                totalCount
+              }
+            }
+          }
+        '
+      env:
+       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+ 
