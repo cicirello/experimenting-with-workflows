@@ -132,8 +132,9 @@ jobs:
               topRepositories(first: 100, after: $endCursor, orderBy: {direction: DESC, field: UPDATED_AT}) {
                 totalCount
                 nodes {
-                  name
-                  nameWithOwner
+                  owner {
+                    login
+                  }
                 }
                 pageInfo {
                   hasNextPage
