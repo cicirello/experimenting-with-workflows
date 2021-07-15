@@ -169,10 +169,15 @@ jobs:
                     totalSize
                     edges {
                       size
+                      node { # does this exist - not documented
+                        color
+                        name
+                      }
                     }
                     nodes {
                       color
                       name
+                      size # does this exist - not documented
                     }
                   }
                 }
