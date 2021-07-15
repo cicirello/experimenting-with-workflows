@@ -14,8 +14,8 @@ jobs:
     - name: gh api query various user stats
       run: |
         gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
-          query($user: String!) {
-            user(login: $user) {
+          query($owner: String!) {
+            user(login: $owner) {
               contributionsCollection {
                 totalCommitContributions 
                 totalIssueContributions 
@@ -127,8 +127,8 @@ jobs:
     - name: gh api query topRepositories
       run: |
         gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
-          query($user: String!, $endCursor: String) {
-            user(login: $user) {
+          query($owner: String!, $endCursor: String) {
+            user(login: $owner) {
               topRepositories(first: 100, after: $endCursor, orderBy: {direction: DESC, field: UPDATED_AT}) {
                 totalCount
                 nodes {
