@@ -146,3 +146,43 @@ jobs:
         '
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: gh api query repositories
+      run: |
+        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
+          query($owner: String!, $endCursor: String) {
+            user(login: $owner) {
+              repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER) {
+                totalCount
+                nodes {
+                  stargazerCount 
+                  forkCount
+                  isArchived
+                  isFork
+                  isPrivate
+                  isTemplate
+                  watchers {
+                    totalCount
+                  }
+                  languages(orderBy: {direction: DESC, field: SIZE}) {
+                    totalCount
+                    totalSize
+                    edges {
+                      size
+                    }
+                    nodes {
+                      color
+                      name
+                    }
+                  }
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+              }
+            }
+          }
+        '
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
