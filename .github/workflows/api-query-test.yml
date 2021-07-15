@@ -164,7 +164,7 @@ jobs:
                   watchers {
                     totalCount
                   }
-                  languages(orderBy: {direction: DESC, field: SIZE}) {
+                  languages(first: 100, orderBy: {direction: DESC, field: SIZE}) {
                     totalCount
                     totalSize
                     edges {
