@@ -177,7 +177,6 @@ jobs:
                     nodes {
                       color
                       name
-                      size # does this exist - not documented
                     }
                   }
                 }
