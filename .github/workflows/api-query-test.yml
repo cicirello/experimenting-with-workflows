@@ -124,8 +124,24 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
-    - name: gh query api
+    - name: gh api query topRepositories
       run: |
-        echo "hello"
+        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
+          query($user: String!, $endCursor: String) {
+            user(login: $user) {
+              topRepositories(first: 100, after: $endCursor, orderBy: {direction: DESC, field: UPDATED_AT}) {
+                totalCount
+                nodes {
+                  name
+                  nameWithOwner
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+              }
+            }
+          }
+        '
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
