@@ -152,7 +152,7 @@ jobs:
         gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
           query($owner: String!, $endCursor: String) {
             user(login: $owner) {
-              repositories(first: 10, after: $endCursor, ownerAffiliations: OWNER) {
+              repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER) {
                 totalCount
                 nodes {
                   stargazerCount 
@@ -164,19 +164,15 @@ jobs:
                   watchers {
                     totalCount
                   }
-                  languages(first: 2, orderBy: {direction: DESC, field: SIZE}) {
+                  languages(first: 100, orderBy: {direction: DESC, field: SIZE}) {
                     totalCount
                     totalSize
                     edges {
                       size
-                      node { # does this exist - not documented
+                      node { 
                         color
                         name
                       }
-                    }
-                    nodes {
-                      color
-                      name
                     }
                   }
                 }
