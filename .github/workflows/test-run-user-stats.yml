@@ -15,5 +15,6 @@ jobs:
       uses: cicirello/user-statistician@dev
       with:
         colors: dark
+        max-languages: 100
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
