@@ -1,0 +1,19 @@
+  
+name: user-statistician
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+      
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate the user stats image
+      uses: cicirello/user-statistician@dev
+      with:
+        colors: dark
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
