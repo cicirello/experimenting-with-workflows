@@ -14,7 +14,7 @@ jobs:
     - name: Generate the user stats image
       uses: cicirello/user-statistician@dev
       with:
-        colors: light
+        colors: dark
         max-languages: 9
         hide-keys: general, repositories, contributions
       env:
