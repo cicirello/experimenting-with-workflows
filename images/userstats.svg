@@ -1,12 +1,12 @@
 <svg width="440" height="312" viewBox="0 0 440 312" xmlns="http://www.w3.org/2000/svg">
-<rect x="2" y="2" stroke-width="4" rx="6" width="436" height="308" stroke="#c8e1ff" fill="#f6f8fa" />
+<rect x="2" y="2" stroke-width="4" rx="6" width="436" height="308" stroke="#0d419d" fill="#090c10" />
 <g font-weight="600" font-family="Verdana,Geneva,DejaVu Sans,sans-serif">
-<text x="15" y="37" font-size="18px" fill="#24292e">Vincent A. Cicirello's GitHub Activity</text>
-<g transform="translate(0, 60)" font-size="14px" fill="#24292e">
+<text x="15" y="37" font-size="18px" fill="#f0f6fc">Vincent A. Cicirello's GitHub Activity</text>
+<g transform="translate(0, 60)" font-size="14px" fill="#c9d1d9">
 <g transform="translate(15, 0)">
 <text x="0" y="12.5">Language Distribution in Public Repositories:</text>
 </g>
-<g transform="translate(235, 21)"><circle cx="92.0" cy="92.0" r="92.0" fill="#000000" /></g>
+<g transform="translate(235, 21)"><circle cx="92.0" cy="92.0" r="92.0" fill="#ffffff" /></g>
 <g transform="translate(236, 22)"><svg viewBox="0 0 182.0 182.0" width="182.0" height="182.0">
 <path fill-rule="evenodd" fill="#b07219" d="M 0.0,91.00000000000001 A 91.0 91.0 0 1 1 145.2447186811338 164.06511134053414 L 91.0,91.0 Z"/>
 <path fill-rule="evenodd" fill="#e34c26" d="M 145.2447186811338,164.06511134053414 A 91.0 91.0 0 0 1 15.550070679030796 141.87541808634845 L 91.0,91.0 Z"/>
@@ -20,43 +20,43 @@
 <path fill-rule="evenodd" fill="#959da5" d="M 6.086694753548727e-06,91.03328330526433 A 91.0 91.0 0 0 1 0.0 91.00000000000003 L 91.0,91.0 Z"/>
 </svg></g>
 <g transform="translate(15, 21)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#b07219" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#b07219" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">Java 64.84%</text>
 </g>
 <g transform="translate(15, 42)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#e34c26" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#e34c26" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">HTML 25.72%</text>
 </g>
 <g transform="translate(15, 63)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#3572A5" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#3572A5" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">Python 5.26%</text>
 </g>
 <g transform="translate(15, 84)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#3D6117" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#3D6117" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">TeX 3.88%</text>
 </g>
 <g transform="translate(15, 105)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#384d54" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#384d54" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">Dockerfile 0.10%</text>
 </g>
 <g transform="translate(15, 126)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#427819" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#427819" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">Makefile 0.09%</text>
 </g>
 <g transform="translate(15, 147)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#89e051" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#89e051" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">Shell 0.04%</text>
 </g>
 <g transform="translate(15, 168)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#e10098" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#e10098" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">GraphQL 0.04%</text>
 </g>
 <g transform="translate(15, 189)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#563d7c" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#563d7c" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">CSS 0.03%</text>
 </g>
 <g transform="translate(15, 210)">
-<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#959da5" stroke-width="1" stroke="#000000" />
+<rect x="0.5" y="0.5" rx="2" width="15" height="15" fill="#959da5" stroke-width="1" stroke="#ffffff" />
 <text x="25" y="12.5">Other 0.01%</text>
 </g>
 </g>
