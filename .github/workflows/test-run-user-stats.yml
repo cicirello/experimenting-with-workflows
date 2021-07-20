@@ -15,6 +15,7 @@ jobs:
       uses: cicirello/user-statistician@dev
       with:
         colors: light
-        max-languages: auto
+        max-languages: 9
+        hide-keys: general, repositories, contributions
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
