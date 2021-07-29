@@ -15,7 +15,9 @@ jobs:
       uses: cicirello/user-statistician@dev
       with:
         colors: dark
-        max-languages: 9
+        language-repository-exclusions: >
+          JavaPermutationTools
+          Chips-n-Salsa
         hide-keys: general, repositories, contributions
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
