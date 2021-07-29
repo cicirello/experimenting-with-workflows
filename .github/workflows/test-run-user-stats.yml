@@ -15,9 +15,7 @@ jobs:
       uses: cicirello/user-statistician@language-exclude-repos
       with:
         colors: dark
-        language-repository-exclusions: >
-          JavaPermutationTools
-          Chips-n-Salsa
+        language-repository-exclusions: cicirello.github.io
         hide-keys: general, repositories, contributions
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
