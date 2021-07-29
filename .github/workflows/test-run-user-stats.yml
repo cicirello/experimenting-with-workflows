@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Generate the user stats image
-      uses: cicirello/user-statistician@dev
+      uses: cicirello/user-statistician@language-exclude-repos
       with:
         colors: dark
         language-repository-exclusions: >
