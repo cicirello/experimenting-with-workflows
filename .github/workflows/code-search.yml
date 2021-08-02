@@ -1,0 +1,23 @@
+name: Code Query
+
+on:
+  workflow_dispatch:
+    inputs:
+      owner:
+        description: 'The user to query'
+        required: true
+      repo:
+        description: 'The repo'
+        required: true
+
+jobs:
+  query:
+
+    runs-on: ubuntu-latest
+      
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: gh api query code search
+      run: |
+        gh api search/code -f q='cicirello/jacoco-badge-generator path:.github/workflows language:YAML'
