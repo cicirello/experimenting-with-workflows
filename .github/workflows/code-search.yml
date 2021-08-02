@@ -20,6 +20,6 @@ jobs:
 
     - name: gh api query code search
       run: |
-        gh api -X GET search/code -H 'Accept: application/vnd.github.v3+json' -f q="cicirello jacoco-badge-generator language:YAML"
+        gh api -X GET search/code -H 'Accept: application/vnd.github.v3+json' -f q="cicirello"
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
