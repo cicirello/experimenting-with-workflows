@@ -20,6 +20,6 @@ jobs:
 
     - name: gh api query code search
       run: |
-        gh api -X GET search/code -H 'Accept: application/vnd.github.v3+json' -f q='cicirello'
+        gh api -H 'Accept: application/vnd.github.v3+json' -X GET 'search/code'  -f q='cicirello'
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
