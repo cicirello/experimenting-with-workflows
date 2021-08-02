@@ -20,6 +20,6 @@ jobs:
 
     - name: gh api query code search
       run: |
-        gh api search/code -f q='cicirello+jacoco-badge-generator+path%3A.github/workflows+language%3AYAML'
+        gh api search/code -f q='cicirello+jacoco-badge-generator+path%3A.github/workflows+language%3AYAML' -f type=Code
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
