@@ -20,6 +20,6 @@ jobs:
 
     - name: gh api query code search
       run: |
-        gh api  -H 'Accept: application/vnd.github.v3+json' search/code?q=checkout
+        gh api search/code?q=checkout
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
