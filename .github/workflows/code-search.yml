@@ -3,10 +3,10 @@ name: Code Query
 on:
   workflow_dispatch:
     inputs:
-      owner:
+      USER:
         description: 'The user to query'
         required: true
-      repo:
+      ACTION:
         description: 'The repo'
         required: true
 
@@ -20,6 +20,6 @@ jobs:
 
     - name: gh api query code search
       run: |
-        gh api search/code?q=checkout
+        gh api search/code?q=${{ github.event.inputs.USER }}+${{ github.event.inputs.ACTION }}+path%3A.github%2Fworkflows+language%3AYAML
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
