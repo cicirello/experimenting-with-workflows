@@ -21,3 +21,5 @@ jobs:
     - name: gh api query code search
       run: |
         gh api search/code -f q='cicirello/jacoco-badge-generator path:.github/workflows language:YAML'
+      env:
+       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
