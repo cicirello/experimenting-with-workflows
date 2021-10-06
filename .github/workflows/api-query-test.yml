@@ -128,7 +128,7 @@ jobs:
         gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
           query($owner: String!, $endCursor: String) {
             user(login: $owner) {
-              topRepositories(first: 10, after: $endCursor, orderBy: {direction: DESC, field: UPDATED_AT}) {
+              topRepositories(first: 10, after: $endCursor, orderBy: {direction: DESC, field: UPDATED_AT}, since: "2008-01-01") {
                 totalCount
                 nodes {
                   owner {
