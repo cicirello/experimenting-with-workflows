@@ -11,118 +11,117 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: gh api query various user stats
-      run: |
-        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              contributionsCollection {
-                totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                totalRepositoryContributions
-                restrictedContributionsCount
-                contributionYears
-              }
-              followers {
-                totalCount
-              }
-              following {
-                totalCount
-              }
-              issues {
-                totalCount
-              }
-              login
-              name
-              pullRequests {
-                totalCount
-              }
-              repositoriesContributedTo {
-                totalCount
-              }
-              sponsorshipsAsMaintainer {
-                totalCount
-              }
-              sponsorshipsAsSponsor  {
-                totalCount
-              }
-              topRepositories(orderBy: {direction: DESC, field: UPDATED_AT}) {
-                totalCount
-              }
-            }
-          }
-        '
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#    - name: gh api query various user stats
+#      run: |
+#        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
+#          query($owner: String!) {
+#            user(login: $owner) {
+#              contributionsCollection {
+#                totalCommitContributions 
+#                totalIssueContributions 
+#                totalPullRequestContributions
+#                totalPullRequestReviewContributions
+#                totalRepositoryContributions
+#                restrictedContributionsCount
+#                contributionYears
+#              }
+#              followers {
+#                totalCount
+#              }
+#              following {
+#                totalCount
+#              }
+#              issues {
+#                totalCount
+#              }
+#              login
+#              name
+#              pullRequests {
+#                totalCount
+#              }
+#              repositoriesContributedTo {
+#                totalCount
+#              }
+#              sponsorshipsAsMaintainer {
+#                totalCount
+#              }
+#              sponsorshipsAsSponsor  {
+#                totalCount
+#              }
+#              topRepositories(orderBy: {direction: DESC, field: UPDATED_AT}) {
+#                totalCount
+#              }
+#            }
+#          }
+#        '
+#      env:
+#        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-    - name: gh api query contributions for various years
-      run: |
-        gh api graphql -F owner='{owner}' --cache 1h -f query='
-          query($owner: String!) {
-            user(login: $owner) {
-              year2011: contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2012: contributionsCollection(from: "2012-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2013: contributionsCollection(from: "2013-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2014: contributionsCollection(from: "2014-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2015: contributionsCollection(from: "2015-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2016: contributionsCollection(from: "2016-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2017: contributionsCollection(from: "2017-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2018: contributionsCollection(from: "2018-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2019: contributionsCollection(from: "2019-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2020: contributionsCollection(from: "2020-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-              year2021: contributionsCollection(from: "2021-01-01T00:00:00.001Z") {
-                totalCommitContributions 
-                totalPullRequestReviewContributions
-                restrictedContributionsCount 
-              }
-            }
-          }
-        '
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+#    - name: gh api query contributions for various years
+#      run: |
+#        gh api graphql -F owner='{owner}' --cache 1h -f query='
+#          query($owner: String!) {
+#            user(login: $owner) {
+#              year2011: contributionsCollection(from: "2011-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2012: contributionsCollection(from: "2012-01-01T00:00:00.001Z") {
+#               totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2013: contributionsCollection(from: "2013-01-01T00:00:00.001Z") {
+#               totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2014: contributionsCollection(from: "2014-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2015: contributionsCollection(from: "2015-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2016: contributionsCollection(from: "2016-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2017: contributionsCollection(from: "2017-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2018: contributionsCollection(from: "2018-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2019: contributionsCollection(from: "2019-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2020: contributionsCollection(from: "2020-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#              year2021: contributionsCollection(from: "2021-01-01T00:00:00.001Z") {
+#                totalCommitContributions 
+#                totalPullRequestReviewContributions
+#                restrictedContributionsCount 
+#              }
+#            }
+#          }
+#        '
+#      env:
+#        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     - name: gh api query topRepositories
       run: |
@@ -147,43 +146,43 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-    - name: gh api query repositories
-      run: |
-        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
-          query($owner: String!, $endCursor: String) {
-            user(login: $owner) {
-              repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER) {
-                totalCount
-                nodes {
-                  stargazerCount 
-                  forkCount
-                  isArchived
-                  isFork
-                  isPrivate
-                  isTemplate
-                  name
-                  watchers {
-                    totalCount
-                  }
-                  languages(first: 100, orderBy: {direction: DESC, field: SIZE}) {
-                    totalCount
-                    totalSize
-                    edges {
-                      size
-                      node { 
-                        color
-                        name
-                      }
-                    }
-                  }
-                }
-                pageInfo {
-                  hasNextPage
-                  endCursor
-                }
-              }
-            }
-          }
-        '
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#    - name: gh api query repositories
+#      run: |
+#        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
+#          query($owner: String!, $endCursor: String) {
+#           user(login: $owner) {
+#             repositories(first: 100, after: $endCursor, ownerAffiliations: OWNER) {
+#                totalCount
+#                nodes {
+#                  stargazerCount 
+#                  forkCount
+#                  isArchived
+#                  isFork
+#                  isPrivate
+#                  isTemplate
+#                  name
+#                  watchers {
+#                    totalCount
+#                  }
+#                  languages(first: 100, orderBy: {direction: DESC, field: SIZE}) {
+#                    totalCount
+#                    totalSize
+#                    edges {
+#                      size
+#                      node { 
+#                        color
+#                        name
+#                      }
+#                    }
+#                  }
+#                }
+#                pageInfo {
+#                  hasNextPage
+#                  endCursor
+#               }
+#              }
+#            }
+#          }
+#        '
+#      env:
+#        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
