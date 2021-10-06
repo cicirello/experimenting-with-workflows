@@ -146,6 +146,29 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+    - name: gh api query repositoriesContributedTo
+      run: |
+        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
+          query($owner: String!, $endCursor: String) {
+            user(login: $owner) {
+              repositoriesContributedTo(first: 100, after: $endCursor, orderBy: {direction: DESC, field: UPDATED_AT}, includeUserRepositories: false) {
+                totalCount
+                nodes {
+                  owner {
+                    login
+                  }
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+              }
+            }
+          }
+        '
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 #    - name: gh api query repositories
 #      run: |
 #        gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
