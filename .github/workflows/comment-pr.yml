@@ -21,7 +21,8 @@ jobs:
         REPORT=$(<coverage-summary.json)
         COVERAGE=$(jq -r '.coverage' <<< "$REPORT")%
         BRANCHES=$(jq -r '.branches' <<< "$REPORT")%
-        BODY="Coverage = ${COVERAGE}\nBranches = ${BRANCHES}"
+        NEWLINE=$'\n'
+        BODY="Coverage = ${COVERAGE}${NEWLINE}Branches = ${BRANCHES}"
         gh pr comment ${{github.event.pull_request.number}} -b "${BODY}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
