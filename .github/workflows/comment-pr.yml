@@ -20,7 +20,7 @@ jobs:
       run: |
         REPORT=$(<coverage-summary.json)
         echo $REPORT
-        COVERAGE=$(jq -r '.coverage' <<< "$REPORT")
+        COVERAGE=$(jq -r '.coverage' <<< "$REPORT")%
         echo $COVERAGE
         #BRANCHES=$(jq -r '.branches' <<< "$REPORT")
         #BODY="Coverage = ${COVERAGE}\nBranches = ${BRANCHES}"
