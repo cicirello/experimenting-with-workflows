@@ -19,11 +19,10 @@ jobs:
       if: ${{ github.event_name == 'pull_request' }}
       run: |
         REPORT=$(<coverage-summary.json)
-        echo $REPORT
         COVERAGE=$(jq -r '.coverage' <<< "$REPORT")%
-        echo $COVERAGE
-        #BRANCHES=$(jq -r '.branches' <<< "$REPORT")
-        #BODY="Coverage = ${COVERAGE}\nBranches = ${BRANCHES}"
+        BRANCHES=$(jq -r '.branches' <<< "$REPORT")%
+        BODY="Coverage = ${COVERAGE}\nBranches = ${BRANCHES}"
+        echo $BODY
         #gh pr comment ${{github.event.pull_request.number}} -b ${BODY}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
