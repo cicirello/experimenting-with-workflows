@@ -1,0 +1,23 @@
+name: comment
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Comment on PR
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        gh pr comment -b "This is a test of commenting on a PR with the gh cli."
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
