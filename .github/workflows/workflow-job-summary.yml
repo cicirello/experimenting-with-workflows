@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  summarize:
 
     runs-on: ubuntu-latest
 
