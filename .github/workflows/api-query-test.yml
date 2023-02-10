@@ -123,6 +123,9 @@ jobs:
 #      env:
 #        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+    - name: version check
+      run: gh --version
+
     - name: gh api query topRepositories
       run: |
         gh api graphql -F owner='{owner}' --paginate --cache 1h -f query='
