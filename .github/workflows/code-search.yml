@@ -20,6 +20,6 @@ jobs:
 
     - name: gh api query code search
       run: |
-        gh search code "${{ github.event.inputs.USER }}/${{ github.event.inputs.ACTION }}" "path:.github/workflows" --language YAML --json repository
+        gh search code "${{ github.event.inputs.USER }}/${{ github.event.inputs.ACTION }}" "path:.github/workflows" --language YAML --json textMatches
       env:
        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
