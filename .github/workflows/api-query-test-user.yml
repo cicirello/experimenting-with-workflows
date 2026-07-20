@@ -25,7 +25,6 @@ jobs:
             user(login: $user) {
               contributionsCollection {
                 totalCommitContributions
-                totalIssueContributions
               }
             }
         }
@@ -37,6 +36,7 @@ jobs:
             }
             user(login: $user) {
               contributionsCollection {
+                totalIssueContributions
                 totalPullRequestContributions
                 totalPullRequestReviewContributions
                 restrictedContributionsCount
