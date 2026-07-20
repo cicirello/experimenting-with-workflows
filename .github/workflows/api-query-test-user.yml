@@ -40,12 +40,6 @@ jobs:
               repositoriesContributedTo(first: 1) {
                 totalCount
               }
-              sponsorshipsAsMaintainer(first: 1) {
-                totalCount
-              }
-              sponsorshipsAsSponsor(first: 1)  {
-                totalCount
-              }
             }
           }
         '
