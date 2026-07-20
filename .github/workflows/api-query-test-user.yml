@@ -20,15 +20,6 @@ jobs:
         gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
           query($user: String!) {
             user(login: $user) {
-              contributionsCollection {
-                totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                totalRepositoryContributions
-                restrictedContributionsCount
-                contributionYears
-              }
               followers {
                 totalCount
               }
@@ -50,9 +41,6 @@ jobs:
                 totalCount
               }
               sponsorshipsAsSponsor  {
-                totalCount
-              }
-              topRepositories(orderBy: {direction: DESC, field: UPDATED_AT}) {
                 totalCount
               }
             }
