@@ -37,6 +37,12 @@ jobs:
               pullRequests(first: 1) {
                 totalCount
               }
+              sponsorshipsAsMaintainer(first: 1) {
+                totalCount
+              }
+              sponsorshipsAsSponsor(first: 1)  {
+                totalCount
+              }
             }
           }
         '
@@ -46,10 +52,7 @@ jobs:
               cost
             }
             user(login: $user) {
-              sponsorshipsAsMaintainer(first: 1) {
-                totalCount
-              }
-              sponsorshipsAsSponsor(first: 1)  {
+              repositoriesContributedTo(first: 1) {
                 totalCount
               }
             }
