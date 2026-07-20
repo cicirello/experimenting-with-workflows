@@ -23,6 +23,8 @@ jobs:
               cost
             }
             user(login: $user) {
+              login
+              name
               followers(first: 1) {
                 totalCount
               }
@@ -32,9 +34,25 @@ jobs:
               issues(first: 1) {
                 totalCount
               }
-              login
-              name
               pullRequests(first: 1) {
+                totalCount
+              }
+            }
+          }
+        '
+        gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
+          query($user: String!) {
+            rateLimit {
+              cost
+            }
+            user(login: $user) {
+              repositoriesContributedTo(first: 1) {
+                totalCount
+              }
+              sponsorshipsAsMaintainer(first: 1) {
+                totalCount
+              }
+              sponsorshipsAsSponsor(first: 1)  {
                 totalCount
               }
             }
