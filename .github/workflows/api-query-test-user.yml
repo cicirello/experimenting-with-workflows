@@ -19,6 +19,9 @@ jobs:
       run: |
         gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
           query($user: String!) {
+            rateLimit {
+              cost
+            }
             user(login: $user) {
               followers(first: 1) {
                 totalCount
