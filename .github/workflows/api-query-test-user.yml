@@ -31,9 +31,6 @@ jobs:
               }
               login
               name
-              pullRequests(first: 1) {
-                totalCount
-              }
               repositoriesContributedTo(first: 1) {
                 totalCount
               }
