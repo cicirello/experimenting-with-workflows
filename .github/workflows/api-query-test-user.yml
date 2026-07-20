@@ -48,11 +48,11 @@ jobs:
           }
         '
         gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
-          query($owner: String!) {
+          query($user: String!) {
             rateLimit {
               cost
             }
-            user(login: $owner) {
+            user(login: $user) {
               contributionsCollection {
                 totalCommitContributions 
                 totalIssueContributions 
