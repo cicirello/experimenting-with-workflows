@@ -19,7 +19,7 @@ jobs:
       run: |
         gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
           query($user: String!) {
-            user(login: "LanikSJ") {
+            user(login: $user) {
               followers(first: 1) {
                 totalCount
               }
