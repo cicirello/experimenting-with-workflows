@@ -47,7 +47,23 @@ jobs:
             }
           }
         '
-        gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
+        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
+          query($owner: String!) {
+            rateLimit {
+              cost
+            }
+            user(login: $owner) {
+              contributionsCollection {
+                totalCommitContributions 
+                totalIssueContributions 
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                restrictedContributionsCount
+              }
+            }
+        }
+        '
+        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
           query($user: String!) {
             rateLimit {
               cost
