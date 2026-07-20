@@ -26,15 +26,15 @@ jobs:
               following {
                 totalCount
               }
-              issues {
+              issues(first: 1) {
                 totalCount
               }
               login
               name
-              pullRequests {
+              pullRequests(first: 1) {
                 totalCount
               }
-              repositoriesContributedTo {
+              repositoriesContributedTo(first: 1) {
                 totalCount
               }
               sponsorshipsAsMaintainer {
