@@ -15,6 +15,38 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: contributionsCollection query
+      run: |
+        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
+          query($user: String!) {
+            rateLimit {
+              cost
+            }
+            user(login: $user) {
+              contributionsCollection {
+                totalCommitContributions
+                totalIssueContributions
+              }
+            }
+        }
+        '
+        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
+          query($user: String!) {
+            rateLimit {
+              cost
+            }
+            user(login: $user) {
+              contributionsCollection {
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                restrictedContributionsCount
+              }
+            }
+        }
+        '
+      env:
+       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
     - name: gh api query various user stats
       run: |
         gh api graphql -F user=${{ github.event.inputs.USER }} --paginate --cache 1h -f query='
@@ -46,22 +78,6 @@ jobs:
               }
             }
           }
-        '
-        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
-          query($user: String!) {
-            rateLimit {
-              cost
-            }
-            user(login: $user) {
-              contributionsCollection {
-                totalCommitContributions 
-                totalIssueContributions 
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                restrictedContributionsCount
-              }
-            }
-        }
         '
         gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
           query($user: String!) {
