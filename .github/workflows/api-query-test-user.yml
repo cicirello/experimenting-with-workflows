@@ -25,6 +25,7 @@ jobs:
             user(login: $user) {
               login
               name
+              createdAt
               followers(first: 1) {
                 totalCount
               }
