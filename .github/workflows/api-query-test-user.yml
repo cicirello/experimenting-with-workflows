@@ -25,29 +25,7 @@ jobs:
             user(login: $user) {
               contributionsCollection {
                 totalCommitContributions
-              }
-            }
-        }
-        '
-        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
-          query($user: String!) {
-            rateLimit {
-              cost
-            }
-            user(login: $user) {
-              contributionsCollection {
                 totalIssueContributions
-              }
-            }
-        }
-        '
-        gh api graphql -F user=${{ github.event.inputs.USER }} --cache 1h -f query='
-          query($user: String!) {
-            rateLimit {
-              cost
-            }
-            user(login: $user) {
-              contributionsCollection {
                 totalPullRequestContributions
                 totalPullRequestReviewContributions
                 restrictedContributionsCount
